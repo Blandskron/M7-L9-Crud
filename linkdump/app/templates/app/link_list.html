@@ -1,0 +1,11 @@
+<h2>Links</h2>
+<a href="{% url 'link_create' %}">Add New Link</a>
+<ul>
+    {% for link in links %}
+    <li>
+        <a href="{{ link.url }}" target="_blank">{{ link.url }}</a> - {{ link.description }}
+        <a href="{% url 'link_update' link.pk %}">Edit</a>
+        <a href="{% url 'link_delete' link.pk %}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
